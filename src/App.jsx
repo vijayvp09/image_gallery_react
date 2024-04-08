@@ -1,30 +1,31 @@
-import { useEffect, useState } from "react"
-import ImageCard from "./components/imageCard/ImageCard";
+import { useEffect, useState, useContext } from "react"
+import Navbar from "./components/navbar/Navbar"
+import ImageCard from "./components/imageCard/ImageCard"
+import { SearchContext } from "./context/SearchContext"
 import './App.css'
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
 
 function App() {
   const [images, setImages] = useState([]);
+  const searchContext = useContext(SearchContext);
 
   useEffect(()=>{
-    fetch(`https://pixabay.com/api/?key=${API_KEY}&q=cat+smile&image_type=photo&pretty=true`)
-    .then((res)=> res.json())
-    .then((data) => {
-
-      setImages(()=>data.hits);
-
-    })
-    .catch((err) => console.log(err))
-  }, [])
+    fetch(`https://pixabay.com/api/?key=${API_KEY}&q=${searchContext.searchTerm}&image_type=photo&pretty=true`)
+      .then((res)=> res.json())
+        .then((data) => {
+          setImages(()=>data.hits);
+        })
+          .catch((err) => console.log(err))
+  }, [searchContext.searchTerm])
 
   return (
     <>
-      <div className="flex flex-wrap mx-auto overflow-hidden w-full bg-cyan-600">
+      <Navbar />
+      <div className="relative flex flex-wrap mx-auto justify-center overflow-hidden w-full bg-custom-custom-blue">
         {images.map((items, index)=>{
-
           return(
-          <div className="w-1/4" key={index} >
-            <ImageCard image={items.largeImageURL} comments={items.comments} likes={items.likes} views={items.views} author={items.user} />
+          <div className="w-1/4 " key={index} >
+            <ImageCard image={items.largeImageURL} comments={items.comments} likes={items.likes} views={items.views} author={items.user} authorImage={items.userImageURL} />
           </div> 
           
         )})}

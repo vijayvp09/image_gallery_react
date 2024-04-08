@@ -1,6 +1,7 @@
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineEye } from "react-icons/ai";
 import { BiComment } from "react-icons/bi";
+import { FaUserCircle } from "react-icons/fa";
 import { useState } from "react";
 
 const ImageCard = ({children,...props}) => {

@@ -12,8 +12,8 @@ const SearchComponent = () => {
     return(
         
             <form onSubmit={handleSubmit} className="w-full flex justify-center items-center">
-                <input type="text" placeholder="search " name="searchTerm" className="rounded-lg w-1/4 sm:w-44 h-8 appearance-none focus:outline-none px-3 text-xl pb-1 mt-2" />
-                <button type="submit" className="ml-3 bg-custom-custom-blue rounded-lg w-16 sm:w-24 h-8 mt-2" >Search</button>
+                <input type="text" placeholder="search " name="searchTerm" className="rounded-lg lg:w-1/4 w-44 h-8 appearance-none focus:outline-none px-3 text-xl pb-1 mt-2" />
+                <button type="submit" className="ml-3 bg-custom-custom-blue rounded-lg w-16 lg:w-16 h-8 mt-2" >Search</button>
             </form>
         
     )

@@ -23,14 +23,14 @@ function App() {
 
   return (
     <>
-    <div className=" bg-custom-custom-blue h-screen">
+    <div className=" bg-yellow-200 h-screen">
       <Navbar />
 
       {!loading && images.length===0 && <h1 className="text-5xl font-semibold font-sans text-white text-center mt-3 ">Not Found</h1>}
 
       {loading ? <h1 className="text-5xl font-semibold font-sans text-white flex justify-center align-center">Loading...</h1> 
       :
-      <div className="relative flex flex-wrap mx-auto justify-center overflow-hidden w-full bg-custom-custom-blue">
+      <div className="relative flex flex-wrap mx-auto justify-center overflow-hidden w-full bg-yellow-200">
         {images.map((items, index)=>{
           return(
           <div className="lg:w-1/4 w-[90%] h-[90%]" key={index} >

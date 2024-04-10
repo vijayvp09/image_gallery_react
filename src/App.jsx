@@ -32,7 +32,7 @@ function App() {
       <div className="relative flex flex-wrap mx-auto justify-center overflow-hidden w-full bg-custom-custom-blue">
         {images.map((items, index)=>{
           return(
-          <div className="w-1/4 sm:w-1/2 sm:h-[90%]" key={index} >
+          <div className="lg:w-1/4 w-1/2 h-[90%]" key={index} >
             <ImageCard image={items.largeImageURL} comments={items.comments} likes={items.likes} views={items.views} author={items.user} authorImage={items.userImageURL} />
           </div> 
         )})}

@@ -15,6 +15,7 @@ function App() {
       .then((res)=> res.json())
         .then((data) => {
           setImages(()=>data.hits);
+          console.log(data.hits[0].comments)
           setLoading(false);
         })
           .catch((err) => console.log(err))

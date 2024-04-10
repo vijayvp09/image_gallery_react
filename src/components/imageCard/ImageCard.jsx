@@ -19,7 +19,7 @@ const ImageCard = ({children,...props}) => {
         <div className="">
         <div className="rounded-md m-3 p-2 min-h-52  shadow-xl overflow-hidden bg-gray-50 border-spacing-1 border-gray-100 ">
             <div className="overflow-hidden">
-                <img src={image} onClick={()=> handleImageClick(image)} alt="" className="p-0 shadow-sm rounded-sm lg:hover:scale-125 transform scale-100 transition duration-700 hover:scale-125 " />
+                <img src={image} onClick={()=> handleImageClick(image)} alt="" className="p-0 shadow-sm rounded-sm transform scale-100 transition hover:scale-125  duration-700 " />
             </div>
             <ul className="space-x-1 min-h-8">
                 <div className="flex items-center">
